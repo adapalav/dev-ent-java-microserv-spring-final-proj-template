@@ -1,48 +1,37 @@
 package com.hinkmond.finalproj;
 
 
-public class AddUserData {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String usrName;
-    private String phoneNo;
-    private String address;
+public class AddMenuItem {
+    private String dishName;
+    private String dishType;
+    private String description;
+    private Float dishPrice;
 
-    public String getFirstName() {
-        return firstName;
+    public String getDishName() {
+        return dishName;
     }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setDishNameName(String dishName) {
+        this.dishName = dishName;
     }
-    public String getLastName() {
-        return lastName;
+    public String getDishType() {
+        return dishType;
     }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setDishType(String dishType) {
+        this.dishType = dishType;
     }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDescription(String description) {
+        this.description = description;
     }
-    public String getEmail() {
-        return email;
+    public String getDescription() {
+        return description;
     }
-    public void setUsrName(String usrName) {
-        this.usrName = usrName;
+
+
+    public void setDishPrice(Float dishPrice) {
+        this.dishPrice = dishPrice;
     }
-    public String getUsrName() {
-        return usrName;
+    public Float getDishPrice() {
+        return dishPrice;
     }
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
-    }
-    public String getPhoneNo() {
-        return phoneNo;
-    }
-    public String getAddress() {
-        return address;
-    }
-    public void setAddress(String address) {
-        this.address = address;
-    }
+
 }
