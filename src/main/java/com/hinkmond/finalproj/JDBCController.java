@@ -72,11 +72,112 @@ public class JDBCController {
     }
 
     @CrossOrigin
+    @RequestMapping(value = "/printMenuApitizersOnly", method = RequestMethod.GET)
+    public String printMenuApitizersOnly() {
+        JdbcTemplate jdbcTemplate = JDBCConnector.getJdbcTemplate();
+        StringBuilder resultStr = new StringBuilder();
+
+        // Get all Apitizers only
+        String queryStr = "SELECT * from menu_list WHERE dish_type=\"Apitizer\";";
+        SqlRowSet sqlRowSet = jdbcTemplate.queryForRowSet(queryStr);
+        while (sqlRowSet.next()) {
+            resultStr.append(sqlRowSet.getString("menu_id")).append(", ")
+                    .append(sqlRowSet.getString("dish_name")).append(", ")
+                    .append(sqlRowSet.getString("dish_type")).append(", ")
+                    .append(sqlRowSet.getString("description")).append(", ")
+                    .append(sqlRowSet.getFloat("dish_price"))
+                    .append("\n");
+        }
+        return (queryStr + "\n" + resultStr);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/printMenuLunchItemsOnly", method = RequestMethod.GET)
+    public String printMenuLunchItemsOnly() {
+        JdbcTemplate jdbcTemplate = JDBCConnector.getJdbcTemplate();
+        StringBuilder resultStr = new StringBuilder();
+
+        // get all Lunch Items Only
+        String queryStr = "SELECT * from menu_list WHERE dish_type=\"Lunch\";";
+        SqlRowSet sqlRowSet = jdbcTemplate.queryForRowSet(queryStr);
+        while (sqlRowSet.next()) {
+            resultStr.append(sqlRowSet.getString("menu_id")).append(", ")
+                    .append(sqlRowSet.getString("dish_name")).append(", ")
+                    .append(sqlRowSet.getString("dish_type")).append(", ")
+                    .append(sqlRowSet.getString("description")).append(", ")
+                    .append(sqlRowSet.getFloat("dish_price"))
+                    .append("\n");
+        }
+        return (queryStr + "\n" + resultStr);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/printMenuDesertsOnly", method = RequestMethod.GET)
+    public String printMenuDesertsOnly() {
+        JdbcTemplate jdbcTemplate = JDBCConnector.getJdbcTemplate();
+        StringBuilder resultStr = new StringBuilder();
+
+        // Show items with different entry for the same type, misspelled in this case (Desert instead of Dessert)
+        String queryStr = "SELECT * from menu_list WHERE (dish_type=\"Dessert\" OR dish_type=\"Desert\");";
+        SqlRowSet sqlRowSet = jdbcTemplate.queryForRowSet(queryStr);
+        while (sqlRowSet.next()) {
+            resultStr.append(sqlRowSet.getString("menu_id")).append(", ")
+                    .append(sqlRowSet.getString("dish_name")).append(", ")
+                    .append(sqlRowSet.getString("dish_type")).append(", ")
+                    .append(sqlRowSet.getString("description")).append(", ")
+                    .append(sqlRowSet.getFloat("dish_price"))
+                    .append("\n");
+        }
+        return (queryStr + "\n" + resultStr);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/printMenuApitizersAndDrinks", method = RequestMethod.GET)
+    public String printMenuApitizersAndDrinks() {
+        JdbcTemplate jdbcTemplate = JDBCConnector.getJdbcTemplate();
+        StringBuilder resultStr = new StringBuilder();
+
+        // get both Apitizers and Drinks
+        String queryStr = "SELECT * from menu_list WHERE (dish_type=\"Apitizer\" OR dish_type=\"Drink\");";
+        SqlRowSet sqlRowSet = jdbcTemplate.queryForRowSet(queryStr);
+        while (sqlRowSet.next()) {
+            resultStr.append(sqlRowSet.getString("menu_id")).append(", ")
+                    .append(sqlRowSet.getString("dish_name")).append(", ")
+                    .append(sqlRowSet.getString("dish_type")).append(", ")
+                    .append(sqlRowSet.getString("description")).append(", ")
+                    .append(sqlRowSet.getFloat("dish_price"))
+                    .append("\n");
+        }
+        return (queryStr + "\n" + resultStr);
+    }
+
+    @CrossOrigin
+    @RequestMapping(value = "/printMenuDrinksOnly", method = RequestMethod.GET)
+    public String printMenuDrinksOnly() {
+        JdbcTemplate jdbcTemplate = JDBCConnector.getJdbcTemplate();
+        StringBuilder resultStr = new StringBuilder();
+
+        // get Drinks Only
+        String queryStr = "SELECT * from menu_list WHERE dish_type=\"Drink\";";
+        SqlRowSet sqlRowSet = jdbcTemplate.queryForRowSet(queryStr);
+        while (sqlRowSet.next()) {
+            resultStr.append(sqlRowSet.getString("menu_id")).append(", ")
+                    .append(sqlRowSet.getString("dish_name")).append(", ")
+                    .append(sqlRowSet.getString("dish_type")).append(", ")
+                    .append(sqlRowSet.getString("description")).append(", ")
+                    .append(sqlRowSet.getFloat("dish_price"))
+                    .append("\n");
+        }
+        return (queryStr + "\n" + resultStr);
+    }
+
+    @CrossOrigin
     @RequestMapping(value = "/printAllMenuItems", method = RequestMethod.GET)
     public String printAllMenuItems() {
         JdbcTemplate jdbcTemplate = JDBCConnector.getJdbcTemplate();
         StringBuilder resultStr = new StringBuilder();
 
+        // Get entire menu
         String queryStr = "SELECT * from menu_list;";
         SqlRowSet sqlRowSet = jdbcTemplate.queryForRowSet(queryStr);
         while (sqlRowSet.next()) {
