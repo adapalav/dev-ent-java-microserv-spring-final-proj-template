@@ -1,4 +1,4 @@
-package com.hinkmond.finalproj;
+package com.adapalav.finalproj;
 
 
 public class AddMenuItem {

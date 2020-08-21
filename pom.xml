@@ -8,7 +8,7 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.hinkmond</groupId>
+    <groupId>com.adapalav</groupId>
     <artifactId>spring-proj-template</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 

@@ -1,4 +1,4 @@
-package com.hinkmond.finalproj;
+package com.adapalav.finalproj;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
