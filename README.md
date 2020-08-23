@@ -42,48 +42,86 @@ CREATE DATABASE restaurant_menu_db;
 USE restaurant_menu_db;
 
 CREATE TABLE IF NOT EXISTS menu_list (
+
     menu_id INT AUTO_INCREMENT PRIMARY KEY,
+
     dish_name VARCHAR(255) UNIQUE NOT NULL,
+    
     dish_type VARCHAR(255) NOT NULL,
+    
     description VARCHAR(255),
+    
     dish_price DECIMAL(5,2) NOT NULL
+    
 );
 
 CREATE TABLE IF NOT EXISTS customer_list (
+
     cust_id INT AUTO_INCREMENT PRIMARY KEY,
+    
     first_name VARCHAR(255) NOT NULL,
+    
     last_name VARCHAR(255) NOT NULL,
+    
     email_id VARCHAR(128) UNIQUE NOT NULL,
+    
     user_name VARCHAR(32) UNIQUE NOT NULL,
+    
     phone_no VARCHAR(32) NOT NULL,
+    
     addr VARCHAR(255)
+    
 );
 
 
 mysql> DESCRIBE customer_list;
+
 +------------+--------------+------+-----+---------+----------------+
+
 | Field      | Type         | Null | Key | Default | Extra          |
+
 +------------+--------------+------+-----+---------+----------------+
+
 | cust_id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+
 | first_name | varchar(255) | NO   |     | NULL    |                |
+
 | last_name  | varchar(255) | NO   |     | NULL    |                |
+
 | email_id   | varchar(128) | NO   | UNI | NULL    |                |
+
 | user_name  | varchar(32)  | NO   | UNI | NULL    |                |
+
 | phone_no   | varchar(32)  | NO   |     | NULL    |                |
+
 | addr       | varchar(255) | YES  |     | NULL    |                |
+
 +------------+--------------+------+-----+---------+----------------+
+
 7 rows in set (0.00 sec)
 
 
+
 mysql> DESCRIBE menu_list;                                                      
+
 +-------------+--------------+------+-----+---------+----------------+
+
 | Field       | Type         | Null | Key | Default | Extra          |
+
 +-------------+--------------+------+-----+---------+----------------+
+
 | menu_id     | int(11)      | NO   | PRI | NULL    | auto_increment |
+
 | dish_name   | varchar(255) | NO   | UNI | NULL    |                |
+
 | dish_type   | varchar(255) | NO   |     | NULL    |                |
+
 | description | varchar(255) | YES  |     | NULL    |                |
+
 | dish_price  | decimal(5,2) | NO   |     | NULL    |                |
+
 +-------------+--------------+------+-----+---------+----------------+
+
 5 rows in set (0.01 sec)
+
 </code>
