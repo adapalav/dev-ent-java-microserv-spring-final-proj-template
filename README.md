@@ -4,14 +4,19 @@ Spring Final Project
 
 Main purpose of the project: 
   Users should be able to place an order from Desktop or Mobile and pick up in about 30 minutes from the restaurant. No delivery service to customer.
+  
 Payment: 
   Will be at the counter before pick-up, can be cheque, cash or credit card.
+  
 FrontEnd (not covered in this project, tools like curl and postman can be used to simulate this): 
   Web or Mobile App (gets the menu from the web server, connecting to the backend database on the cloud)
+
 Middle layer: 
   Java Spring Framework based interface so that the FrontEnd (Web and Mobile App) requests can be streamlined.
+
 Backend, database: 
   Any in the cloud, for now SQL based database.
+
 Time of food delivery after order is complete: Standard, 30 minutes after order.
 
 Limitations of this project:
@@ -19,6 +24,7 @@ Limitations of this project:
 Backend used: MySQL, tables are two, one for Restaurant Menu, other for all Customers
 
 Microservices:
+
   Add Customer
   Add Menu Item
 
@@ -30,6 +36,7 @@ Microservices:
   Get Apitizer items from menu items
   Get both Apitizer and Drink items from menu items
 
+<code>
 CREATE DATABASE restaurant_menu_db;
 
 USE restaurant_menu_db;
@@ -79,3 +86,4 @@ mysql> DESCRIBE menu_list;
 | dish_price  | decimal(5,2) | NO   |     | NULL    |                |
 +-------------+--------------+------+-----+---------+----------------+
 5 rows in set (0.01 sec)
+</code>
