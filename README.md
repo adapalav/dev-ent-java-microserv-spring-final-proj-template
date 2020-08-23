@@ -26,15 +26,23 @@ Backend used: MySQL, tables are two, one for Restaurant Menu, other for all Cust
 Microservices:
 
   Add Customer
+  
   Add Menu Item
 
   Get all customers
+  
   Get all menu items
+  
   Get Lunch items from menu items
+  
   Get Drink items from menu items
+  
   Get Dessert items from menu items
+  
   Get Apitizer items from menu items
+  
   Get both Apitizer and Drink items from menu items
+  
 
 <code>
 CREATE DATABASE restaurant_menu_db;
